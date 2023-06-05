@@ -1,0 +1,84 @@
+
+
+
+<%- include('_head.ejs') -%>
+  <div class="admin-panel">
+    <h2>Admin Panel</h2>
+    
+           
+          
+  <h2 class="menu-item">registered cars <%= cars.length %></h2>
+
+          
+          
+
+
+    <div class="content">
+
+      <table style="width:100%">
+        <tr>
+            <th>sl no.</th>
+            <th>name </th>
+            <th> car name</th>
+            <th>parking place</th>
+            <th>regd number</th>
+            <th> entry date</th>
+            <th> exit date</th>
+            <th> Remove</th>
+        </tr>
+      
+        <% for (let [index,i] of cars.entries()) {  %>
+        <tr>
+            
+            <td><%= index + 1 %></td>
+            <td><%= i.ownerName %></td>
+           <td><%= i.vehicleName %></td>
+           <td><%= i.parkingPlace %></td>
+           <td><%= i.regdnumber %></td>
+           <td><%= i.entryDate %></td>
+           <td><%= i.exitDate %></td>
+           <td> <a href="/delete_car/<%= i.id %> " > Remove </a> </td>
+           
+        </tr>
+        <%  } %>
+       
+      </table>
+
+      <h2 class="menu-item">registered users <%= users.length %></h2>
+
+      <table style="width:100%  " >
+        <tr>
+            <th>sl no.</th>
+            <th>firstName </th>
+            <th> lastName</th>
+            <th>email</th>
+            <th>password</th>
+            <th> Remove</th>
+        </tr>
+      
+        <% for (let [index,i] of users.entries()) {  %>
+        <tr>
+            
+            <td><%= index + 1 %></td>
+            <td><%= i.firstName %></td>
+           <td><%= i.firstName %></td>
+           <td><%= i.email %></td>
+           <td><%= i.password %></td>
+           <td> <a href="/delete_user/<%= i.id %> "> Remove </a> </td>
+           
+        </tr>
+        <%  } %>
+       
+      </table>
+
+
+
+      
+
+
+      <h3>Welcome to the admin panel!</h3>
+      <p>This is where you can manage your website's admin functions.</p>
+    </div>
+  </div>
+
+  <%- include('_foot.ejs') -%>

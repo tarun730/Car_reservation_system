@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="form">
+        <div >
+            <h1>Register your car</h1>
+<p><a>Service provider:- Biotech parking lot </a> <br>
+<a>Contact:- +91 0045678967 <br> Email:- boi_techparking@gmail.com </a></p>
+            <form action="/car_register" method="post">
+
+                <div class="top-row">
+                    <div class="field-wrap">
+                        <label>
+                            Owner Name<span class="req">*</span>
+                        </label>
+                        <input type="text" name="Oname" required autocomplete="off" />
+                    </div>
+
+                    <div class="field-wrap">
+                        <label>
+                            Vehicle Name<span class="req">*</span>
+                        </label>
+                        <input type="text" name="Vname" required autocomplete="off" />
+                    </div>
+                </div>
+                    <div class="field-wrap">
+                        <label>
+                            parking place<span class="req">*</span>
+                        </label>
+                        <!-- <input type="text" required autocomplete="off" > -->
+
+                        <select name="palce_name" >
+                            <option value=""> Please Select </option>
+                            <option value="Delhi"> Delhi </option>
+                            <option value="Kolkata"> Kolkata </option>
+                            <option value="Lucknow"> Lucknow </option>
+                            <option value="Mumbai"> Mumbai </option>
+                        </select>
+
+                    </div>
+
+                    <div class="field-wrap">
+                        <label>
+                         Number plate<span class="req">*</span>
+                        </label>
+                        <input type="text" name="namePlate" required autocomplete="on" />
+                    </div>
+
+                    <div class="field-wrap">
+                        <label>
+                            Entry date<span class="req">*</span>
+                        </label>
+                        <input type="date" name="Edate" required autocomplete="off" />
+                    </div>
+                    <div class="field-wrap">
+                        <label>
+                            exit date<span class="req">*</span>
+                        </label>
+                        <input type="date" name="Extdate" required autocomplete="off" />
+                    </div>
+
+
+                
+                <button type="submit" class="button button-block">REGISTER</button>
+
+            </form>
+            <p> <a href="/history">parking car's List</a> </p>
+            <p> <a href="/logout">logout</a> </p>
+        </div>
+    </div>
+
+</body>
+
+</html>

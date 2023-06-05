@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,td,th{
+          border:1px solid black;
+        }
+        </style>
+</head>
+<body>
+    <h1>car list</h1>
+
+    <table style="width:100%">
+        <tr>
+            <th>sl no.</th>
+            <th>name </th>
+            <th> car name</th>
+            <th>parking place</th>
+            <th>regd number</th>
+            <th> entry date</th>
+            <th> exit date</th>
+            <th> Remove</th>
+        </tr>
+      
+        <% for (let [index,i] of results.entries()) {  %>
+        <tr>
+            
+            <td><%= index + 1 %></td>
+            <td><%= i.ownerName %></td>
+           <td><%= i.vehicleName %></td>
+           <td><%= i.parkingPlace %></td>
+           <td><%= i.regdnumber %></td>
+           <td><%= i.entryDate %></td>
+           <td><%= i.exitDate %></td>
+           <td> <a href="/delete_car/<%= i.id %> " > Remove </a> </td>
+           
+        </tr>
+        <%  } %>
+       
+      </table>
+
+
+
+
+</body>
+</html>
