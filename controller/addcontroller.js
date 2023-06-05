@@ -1,7 +1,7 @@
 
 const path = require('path')
 const con = require('../config/DB_connection')
-// const userCarlist = document.getElementById('carlist')
+
 
 module.exports.home = (req, res) => {
     return res.sendFile(path.join(__dirname, '../public/index.html'));
@@ -10,15 +10,7 @@ module.exports.home = (req, res) => {
 module.exports.create = (req, res) => {
     const { Fname, Lname, email, password } = req.body
     let sql = "INSERT INTO `carres`.`user` (`firstName`, `lastName`,`email`,`password`) VALUES ('" + Fname + "','" + Lname + "','" + email + "','" + password + "')"
-    // let sql_value=``
-    // con.query()email
-    // console.log( Fname,Lname,email,password)
-    // con.query(INSERT INTO `carres`.`user` (`firstname`,`lastname`, `email`,`password`)VALUES (Fname, Lname,email,password);,(err,result)=>{
-    //     if(err){
-    //         console.log(err)
-    //     }
-    //     console.log(result)
-    // })
+    
     con.query(sql, (err, result) => {
         if (err) {
             console.log(err)
@@ -51,7 +43,7 @@ module.exports.car_register = (req, res) => {
 
     return res.render('car_register');
 
-    // return res.sendFile(path.join(__dirname, '../public/register.html'));
+   
 }
 
 
@@ -89,18 +81,6 @@ module.exports.admin = (req, res) => {
         });
     });
 
-    // let sql1 = "SELECT * FROM `carres`.`reginfo`;"  
-    // con.query(sql1, (err, result) => {
-    //     if (err) {
-    //         console.log(err)
-
-    //     }
-    //     return res.render('admin_panel',{results:result})
-
-        // return res.render('totalcar',{results:result})
-
-  
-   
  
 }
 module.exports.logout = (req, res, next) => {
@@ -112,8 +92,7 @@ module.exports.logout = (req, res, next) => {
 
 }
 module.exports.delete_car = (req, res) => {
-    // let sql = "SELECT * FROM `carres`.`reginfo` WHERE user="
-    // console.log(req.params.id)
+
     let sql1 = "DELETE FROM `carres`.`reginfo` WHERE id ='" + req.params.id + "' ;"
     con.query(sql1, (err, result) => {
         if (err) {
@@ -126,8 +105,7 @@ module.exports.delete_car = (req, res) => {
 
 }
 module.exports.delete_user = (req, res) => {
-    // let sql = "SELECT * FROM `carres`.`reginfo` WHERE user="
-    // console.log(req.params.id)
+    
     let sql1 = "DELETE FROM `carres`.`user` WHERE id ='" + req.params.id + "' ;"
     con.query(sql1, (err, result) => {
         if (err) {
@@ -154,14 +132,4 @@ module.exports.registered_car = (req, res) => {
 
     }
     )
-}
-module.exports.registred_Users = (req, res) => {
- 
-}
-
-
-
-module.exports.ejs = (req, res) => {
-
-    res.render('home')
 }
